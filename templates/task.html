@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>
+
+Task
+
+</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static',
+filename='style.css') }}">
+
+</head>
+
+<body>
+    <div class="particles">
+
+    <span class="particle" style="left: 10%; animation-delay: 0s;"></span>
+    <span class="particle" style="left: 20%; animation-delay: 2s;"></span>
+    <span class="particle" style="left: 30%; animation-delay: 4s;"></span>
+    <span class="particle" style="left: 40%; animation-delay: 1s;"></span>
+    <span class="particle" style="left: 50%; animation-delay: 3s;"></span>
+    <span class="particle" style="left: 60%; animation-delay: 5s;"></span>
+    <span class="particle" style="left: 70%; animation-delay: 2.5s;"></span>
+    <span class="particle" style="left: 80%; animation-delay: 4.5s;"></span>
+    <span class="particle" style="left: 90%; animation-delay: 1.5s;"></span>
+
+</div>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/about">About</a>
+
+<a href="/task">Task</a>
+
+</nav>
+
+
+<div class="container">
+
+<h1 class="hero-title">
+
+Smart Scraper 🌐
+
+</h1>
+
+
+<p class="hero-text">
+
+Paste a website URL and let the
+system automatically collect data,
+save information and email results.
+
+</p>
+
+
+
+<div class="card">
+
+<form method="POST"
+onsubmit="showLoader()">
+
+<input
+
+type="text"
+
+name="url"
+
+placeholder="https://example.com"
+
+required
+
+>
+
+<br><br>
+
+
+<button>
+
+Scrape Website
+
+</button>
+
+</form>
+
+
+<div id="loader"
+class="loader-container">
+
+<div class="loader">
+
+</div>
+
+<p>
+
+Analyzing Website...
+
+</p>
+
+</div>
+
+
+
+{% if success_message %}
+
+<div class="success-message">
+
+{{ success_message }}
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+<div class="process-container">
+
+    <div class="process-step">
+        <h3>Enter URL</h3>
+        <p>User enters the website link.</p>
+    </div>
+
+    <div class="process-step">
+        <h3>Scrape Data</h3>
+        <p>Python collects useful content.</p>
+    </div>
+
+    <div class="process-step">
+        <h3>Save File</h3>
+        <p>Data is stored in data.txt.</p>
+    </div>
+
+    <div class="process-step">
+        <h3>Send Email</h3>
+        <p>The file is emailed automatically.</p>
+    </div>
+
+</div>
+
+
+<script>
+
+function showLoader(){
+
+document
+.getElementById(
+"loader"
+)
+.style.display="flex";
+
+}
+
+</script>
+
+<footer>
+    ITEC224 Group Project • 2026
+</footer>
+
+</body>
+
+</html>
+

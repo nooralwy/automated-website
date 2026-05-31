@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="particles">
+    <span class="particle" style="left: 8%; animation-delay: 0s;"></span>
+    <span class="particle" style="left: 18%; animation-delay: 1s;"></span>
+    <span class="particle" style="left: 28%; animation-delay: 2s;"></span>
+    <span class="particle" style="left: 38%; animation-delay: 3s;"></span>
+    <span class="particle" style="left: 48%; animation-delay: 4s;"></span>
+    <span class="particle" style="left: 58%; animation-delay: 5s;"></span>
+    <span class="particle" style="left: 68%; animation-delay: 1.5s;"></span>
+    <span class="particle" style="left: 78%; animation-delay: 2.5s;"></span>
+    <span class="particle" style="left: 88%; animation-delay: 3.5s;"></span>
+</div>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/task">Task</a>
+</nav>
+
+<div class="container">
+
+    <h1 class="hero-title">Meet The Team 👥</h1>
+    <h2>About Our Team</h2>
+    <p class="hero-text">
+        Click on a team member's picture to reveal their information.
+    </p>
+    <p>Small team. Big ideas!</p>
+
+    <div class="card-container">
+
+        <div class="team-card" onclick="toggleInfo('member1', this)">
+            <img src="{{ url_for('static', filename='images/person1.jpg') }}">
+            <div id="member1" class="member-info">
+                <h2>Noor Hussein</h2>
+                <p>Student Number: 22300231</p>
+                <p>Email: nooralwy04@gmail.com</p>
+                <p>Hobbies: Cooking, Reading, Art</p>
+            </div>
+        </div>
+
+        <div class="team-card" onclick="toggleInfo('member2', this)">
+            <img src="{{ url_for('static', filename='images/person2.jpg') }}">
+            <div id="member2" class="member-info">
+                <h2>Obai Mohamed</h2>
+                <p>Student Number: 22213784</p>
+                <p>Email: obsmoe61@gmail.com</p>
+                <p>Hobbies: Football, Gaming, Reading</p>
+            </div>
+        </div>
+
+        <div class="team-card" onclick="toggleInfo('member3', this)">
+            <img src="{{ url_for('static', filename='images/person3.jpg') }}">
+            <div id="member3" class="member-info">
+                <h2>Jaber Shabab</h2>
+                <p>Student Number: 22316426</p>
+                <p>Email: jabershabab111@gmail.com</p>
+                <p>Hobbies: American football, Gym</p>
+            </div>
+        </div>
+
+        <div class="team-card" onclick="toggleInfo('member4', this)">
+            <img src="{{ url_for('static', filename='images/person4.jpg') }}">
+            <div id="member4" class="member-info">
+                <h2>Mustafa Abdirahman</h2>
+                <p>Student Number: 22316717</p>
+                <p>Email: meekabdi0@gmail.com</p>
+                <p>Hobbies: Gym, Scammer</p>
+            </div>
+        </div>
+
+        <div class="team-card" onclick="toggleInfo('member5', this)">
+            <img src="{{ url_for('static', filename='images/person5.jpg') }}">
+            <div id="member5" class="member-info">
+                <h2>Ayoub Amekzaz</h2>
+                <p>Student Number: 22304616</p>
+                <p>Email: ayoub1am@icloud.com</p>
+                <p>Hobbies: Music, Cinema</p>
+            </div>
+        </div>
+
+        <div class="team-card" onclick="toggleInfo('member6', this)">
+            <img src="{{ url_for('static', filename='images/person6.jpg') }}">
+            <div id="member6" class="member-info">
+                <h2>Mohammad Kazim</h2>
+                <p>Student Number: 22322623</p>
+                <p>Email: khan94207324@gmail.com</p>
+                <p>Hobbies: Photography, Coding</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function toggleInfo(id){
+
+    const selectedInfo = document.getElementById(id);
+    const selectedCard = selectedInfo.closest(".team-card");
+
+    const allInfo = document.querySelectorAll(".member-info");
+    const allCards = document.querySelectorAll(".team-card");
+
+    allInfo.forEach(info => {
+        if(info !== selectedInfo){
+            info.style.display = "none";
+        }
+    });
+
+    allCards.forEach(card => {
+        if(card !== selectedCard){
+            card.classList.remove("active-card");
+        }
+    });
+
+    if(selectedInfo.style.display === "block"){
+        selectedInfo.style.display = "none";
+        selectedCard.classList.remove("active-card");
+    } else {
+        selectedInfo.style.display = "block";
+        selectedCard.classList.add("active-card");
+    }
+
+}
+
+
+</script>
+
+<footer>
+    ITEC224 Group Project • 2026
+</footer>
+
+</body>
+
+</html>
+
