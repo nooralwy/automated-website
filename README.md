@@ -40,6 +40,7 @@ ITEC224_Project/
 │   ├── style.css
 │   └── images/
 └── README.md
+```
 
 ## How to Run the Project
 1. Clone the repository:
